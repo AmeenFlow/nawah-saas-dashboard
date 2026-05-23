@@ -1,38 +1,21 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 
-//قائمة روابط التنقل. وضعناها في مصفوفة حتى لا نكرر JSX يدويًا.
-const navItems = [
-    {
-        label: "الرئيسية",
-        href: "/",
-    },
-    {
-        label: "المميزات",
-        href: "#features",
-    },
-    {
-        label: "الأسعار",
-        href: "#pricing",
-    },
-    {
-        label: "تواصل معنا",
-        href: "#contact",
-    },
-];
-// لم نستخدم default export هنا لأن المكونات المشتركة أفضل غالبًا أن تكون named exports.
+
+
 export function SiteHeader() {
     return (
-        <header className="border-b bg-background">
+        <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-                <Link href="/" className="text-lg font-bold">
+                <Link href="/" className="text-lg font-bold tracking-tight">
                     {siteConfig.name}
                 </Link>
 
                 <nav className="hidden items-center gap-6 md:flex">
-                    {navItems.map((item) => (
+                    {mainNavItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
@@ -43,7 +26,13 @@ export function SiteHeader() {
                     ))}
                 </nav>
 
-                <Button>ابدأ الآن</Button>
+                <div className="flex items-center gap-2">
+                    <Button variant="ghost" className="hidden sm:inline-flex">
+                        تسجيل الدخول
+                    </Button>
+
+                    <Button>ابدأ الآن</Button>
+                </div>
             </div>
         </header>
     );
