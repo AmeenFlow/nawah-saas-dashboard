@@ -2,7 +2,7 @@
 
 // الاعدادات العامة للموقع
 export const siteConfig = {
-    name: "ِHybrid Cars",
+    name: "ِNawah",
     description: "A modern bilingual SaaS dashboard for teams.",
     url: "http://localhost:3000",
     locales: ["ar", "en"], //اللغات المدعومة
