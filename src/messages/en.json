@@ -1,0 +1,20 @@
+{
+    "site": {
+        "login": "Log in",
+        "getStarted": "Get started"
+    },
+    "navigation": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing",
+        "contact": "Contact"
+    },
+    "home": {
+        "hero": {
+            "title": "A professional SaaS platform for managing your work",
+            "description": "Nawah helps teams organize tasks, track performance, and build a clearer workflow in Arabic and English.",
+            "primaryAction": "Get started",
+            "secondaryAction": "View features"
+        }
+    }
+}
