@@ -1,18 +1,18 @@
 export const mainNavItems = [
     {
-        label: "الرئيسية",
+        labelKey: "home",
         href: "/",
     },
     {
-        label: "المميزات",
+        labelKey: "features",
         href: "#features",
     },
     {
-        label: "الأسعار",
+        labelKey: "pricing",
         href: "#pricing",
     },
     {
-        label: "تواصل معنا",
+        labelKey: "contact",
         href: "#contact",
     },
 ] as const;

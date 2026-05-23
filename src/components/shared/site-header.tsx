@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
-
-
+import { getDictionary } from "@/lib/dictionaries";
 
 export function SiteHeader() {
+    const locale = siteConfig.defaultLocale;
+    const dictionary = getDictionary(locale);
+
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
@@ -21,17 +23,17 @@ export function SiteHeader() {
                             href={item.href}
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
-                            {item.label}
+                            {dictionary.navigation[item.labelKey]}//أي: خذ مفتاح الترجمة من navigation.ts، ثم اجلب النص المناسب من ملف اللغة.
                         </Link>
                     ))}
                 </nav>
 
                 <div className="flex items-center gap-2">
                     <Button variant="ghost" className="hidden sm:inline-flex">
-                        تسجيل الدخول
+                        {dictionary.site.login}
                     </Button>
 
-                    <Button>ابدأ الآن</Button>
+                    <Button>{dictionary.site.getStarted}</Button>
                 </div>
             </div>
         </header>
