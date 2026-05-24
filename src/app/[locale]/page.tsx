@@ -1,16 +1,26 @@
 import { SiteHeader } from "@/components/shared/site-header";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { getDictionary } from "@/lib/dictionaries";
+import { isLocale } from "@/lib/locale";
 
-export default function HomePage() {
-  
-  const locale = siteConfig.defaultLocale;
+type HomePageProps = Readonly<{
+  params: Promise<{
+    locale: string;
+  }>;
+}>;
+
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return null;
+  }
+
   const dictionary = getDictionary(locale);
 
   return (
     <main className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader locale={locale} />
 
       <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center px-4 text-center">
         <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">

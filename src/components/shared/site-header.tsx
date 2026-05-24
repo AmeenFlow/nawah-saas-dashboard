@@ -4,15 +4,19 @@ import { Button } from "@/components/ui/button";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { getDictionary } from "@/lib/dictionaries";
+import type { Locale } from "@/types/locale";
 
-export function SiteHeader() {
-    const locale = siteConfig.defaultLocale;
+type SiteHeaderProps = Readonly<{
+    locale: Locale;
+}>;
+
+export function SiteHeader({ locale }: SiteHeaderProps) {
     const dictionary = getDictionary(locale);
 
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-                <Link href="/" className="text-lg font-bold tracking-tight">
+                <Link href={`/${locale}`} className="text-lg font-bold tracking-tight">
                     {siteConfig.name}
                 </Link>
 
@@ -20,10 +24,14 @@ export function SiteHeader() {
                     {mainNavItems.map((item) => (
                         <Link
                             key={item.href}
-                            href={item.href}
+                            href={
+                                item.href.startsWith("#")
+                                    ? item.href
+                                    : `/${locale}${item.href}`
+                            }
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
-                            {dictionary.navigation[item.labelKey]}//أي: خذ مفتاح الترجمة من navigation.ts، ثم اجلب النص المناسب من ملف اللغة.
+                            {dictionary.navigation[item.labelKey]}
                         </Link>
                     ))}
                 </nav>
