@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/shared/site-header";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
+import { notFound } from "next/navigation";
 
 type HomePageProps = Readonly<{
   params: Promise<{
@@ -13,7 +14,7 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
-    return null;
+    notFound();
   }
 
   const dictionary = getDictionary(locale);
