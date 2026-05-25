@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { siteConfig } from "@/config/site";
+import { cairo, geist } from "@/lib/fonts";
 import { getTextDirection, isLocale } from "@/lib/locale";
 import type { Locale } from "@/types/locale";
 import "../globals.css";
@@ -40,7 +40,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={direction}>
-      <body>{children}</body>
+      <body className={`${cairo.variable} ${geist.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
