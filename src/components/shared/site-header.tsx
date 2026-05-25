@@ -55,8 +55,10 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         {dictionary.site.login}
                     </Button>
 
-                    <Button>{dictionary.site.getStarted}</Button>
-
+                    <Button className="hidden sm:inline-flex">
+                        {dictionary.site.getStarted}
+                    </Button>
+                    
                     <Sheet>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="md:hidden">
@@ -85,6 +87,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                                     </Link>
                                 ))}
                             </nav>
+
+                            <div className="mt-6 border-t pt-6">
+                                <Button className="w-full">
+                                    {dictionary.site.getStarted}
+                                </Button>
+                            </div>
                         </SheetContent>
                     </Sheet>
                 </div>
