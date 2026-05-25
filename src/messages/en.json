@@ -1,7 +1,8 @@
 {
     "site": {
         "login": "Log in",
-        "getStarted": "Get started"
+        "getStarted": "Get started",
+        "openMenu": "Open menu"
     },
     "navigation": {
         "home": "Home",

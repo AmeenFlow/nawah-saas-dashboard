@@ -20,6 +20,7 @@ type SiteHeaderProps = Readonly<{
 export function SiteHeader({ locale }: SiteHeaderProps) {
     const dictionary = getDictionary(locale);
     const nextLocale = locale === "ar" ? "en" : "ar";
+    const mobileMenuSide = locale === "ar" ? "right" : "left";
 
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
@@ -60,11 +61,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="md:hidden">
                                 <Menu />
-                                <span className="sr-only">فتح القائمة</span>
+                                <span className="sr-only">{dictionary.site.openMenu}</span>
                             </Button>
                         </SheetTrigger>
 
-                        <SheetContent side="right">
+                        <SheetContent side={mobileMenuSide}>
                             <SheetHeader>
                                 <SheetTitle>{siteConfig.name}</SheetTitle>
                             </SheetHeader>

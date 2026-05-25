@@ -1,7 +1,8 @@
 {
     "site": {
         "login": "تسجيل الدخول",
-        "getStarted": "ابدأ الآن"
+        "getStarted": "ابدأ الآن",
+        "openMenu": "فتح القائمة"
     },
     "navigation": {
         "home": "الرئيسية",
