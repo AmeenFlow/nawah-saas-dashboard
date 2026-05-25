@@ -1,6 +1,13 @@
 import Link from "next/link";
-
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { getDictionary } from "@/lib/dictionaries";
@@ -48,7 +55,39 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     </Button>
 
                     <Button>{dictionary.site.getStarted}</Button>
+
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="icon" className="md:hidden">
+                                <Menu />
+                                <span className="sr-only">فتح القائمة</span>
+                            </Button>
+                        </SheetTrigger>
+
+                        <SheetContent side="right">
+                            <SheetHeader>
+                                <SheetTitle>{siteConfig.name}</SheetTitle>
+                            </SheetHeader>
+
+                            <nav className="mt-6 flex flex-col gap-4">
+                                {mainNavItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={
+                                            item.href.startsWith("#")
+                                                ? item.href
+                                                : `/${locale}${item.href}`
+                                        }
+                                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                                    >
+                                        {dictionary.navigation[item.labelKey]}
+                                    </Link>
+                                ))}
+                            </nav>
+                        </SheetContent>
+                    </Sheet>
                 </div>
+
             </div>
         </header>
     );
