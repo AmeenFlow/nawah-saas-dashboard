@@ -12,6 +12,7 @@ type SiteHeaderProps = Readonly<{
 
 export function SiteHeader({ locale }: SiteHeaderProps) {
     const dictionary = getDictionary(locale);
+    const nextLocale = locale === "ar" ? "en" : "ar";
 
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
@@ -37,6 +38,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 </nav>
 
                 <div className="flex items-center gap-2">
+                       {/*  زر تبديل اللغة و هنا استخدمنا از شيلد لاننا نريد الرابط يبقى فعليا رابط و ليس زرا يتصرف كرابط بمعنى اجعل اللينك يأخذ شكل الزر و لكنه يعمل عمل اللينك  */}
+                    <Button variant="ghost" size="sm" asChild>
+                        <Link href={`/${nextLocale}`}>{nextLocale.toUpperCase()}</Link>
+                    </Button>
+
                     <Button variant="ghost" className="hidden sm:inline-flex">
                         {dictionary.site.login}
                     </Button>
