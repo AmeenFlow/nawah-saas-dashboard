@@ -30,6 +30,26 @@
                 "language": "Bilingual experience"
             }
         },
+        "stats": {
+            "items": [
+                {
+                    "value": "+120",
+                    "label": "Teams can work with more clarity"
+                },
+                {
+                    "value": "24",
+                    "label": "Active tasks can be tracked daily"
+                },
+                {
+                    "value": "92%",
+                    "label": "Performance score for better decisions"
+                },
+                {
+                    "value": "AR / EN",
+                    "label": "Full Arabic and English experience"
+                }
+            ]
+        },
         "features": {
             "badge": "Features",
             "title": "Everything you need to manage your team clearly",

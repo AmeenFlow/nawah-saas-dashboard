@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/sections/hero-section";
+import { StatsSection } from "@/components/sections/stats-section";
 import { SiteHeader } from "@/components/shared/site-header";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
@@ -33,7 +34,7 @@ export default async function HomePage({ params }: HomePageProps) {
         highlights={dictionary.home.hero.highlights}
         preview={dictionary.home.hero.preview}
       /> 
-    
+      <StatsSection items={dictionary.home.stats.items} />
     </main>
   );
 }
