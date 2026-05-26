@@ -50,6 +50,25 @@
                 }
             ]
         },
+        "workflow": {
+            "badge": "How it works",
+            "title": "Turn daily work into clear steps",
+            "description": "Nawah helps you move from scattered work to clear execution through a simple experience for small and mid-sized teams.",
+            "steps": [
+                {
+                    "title": "Create your workspace",
+                    "description": "Start with one place that brings together your team, tasks, and core metrics."
+                },
+                {
+                    "title": "Organize tasks and priorities",
+                    "description": "Break work into clear tasks, assign ownership, and track progress easily."
+                },
+                {
+                    "title": "Track performance and decide",
+                    "description": "View the important indicators in one dashboard so you can understand what is happening quickly."
+                }
+            ]
+        },
         "features": {
             "badge": "Features",
             "title": "Everything you need to manage your team clearly",
