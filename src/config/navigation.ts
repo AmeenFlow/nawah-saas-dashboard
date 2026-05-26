@@ -5,7 +5,7 @@ export const mainNavItems = [
     },
     {
         labelKey: "features",
-        href: "#features",
+        href: "/features",
     },
     {
         labelKey: "pricing",

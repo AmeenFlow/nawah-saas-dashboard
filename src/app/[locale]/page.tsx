@@ -1,3 +1,4 @@
+// import { FeaturesSection } from "@/components/sections/features-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SiteHeader } from "@/components/shared/site-header";
 import { getDictionary } from "@/lib/dictionaries";
@@ -21,6 +22,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <main className="min-h-screen">
+
       <SiteHeader locale={locale} />
       <HeroSection
         title={dictionary.home.hero.title}
@@ -28,7 +30,14 @@ export default async function HomePage({ params }: HomePageProps) {
         description={dictionary.home.hero.description}
         primaryAction={dictionary.home.hero.primaryAction}
         secondaryAction={dictionary.home.hero.secondaryAction}
-      />   
+        secondaryActionHref={`/${locale}/features`}
+      /> 
+      {/* <FeaturesSection
+        badge={dictionary.home.features.badge}
+        title={dictionary.home.features.title}
+        description={dictionary.home.features.description}
+        items={dictionary.home.features.items}
+      />   */}
     </main>
   );
 }

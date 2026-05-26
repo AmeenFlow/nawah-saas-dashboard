@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/shared/language-switcher";
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetHeader,
     SheetTitle,
@@ -53,11 +55,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 </nav>
 
                 <div className="flex items-center gap-2">
-                       {/*  زر تبديل اللغة و هنا استخدمنا از شيلد لاننا نريد الرابط يبقى فعليا رابط و ليس زرا يتصرف كرابط بمعنى اجعل اللينك يأخذ شكل الزر و لكنه يعمل عمل اللينك  */}
-                    <Button variant="ghost" size="sm" asChild>
-                        <Link href={`/${nextLocale}`}>{nextLocale.toUpperCase()}</Link>
-                    </Button>
-
+                    <LanguageSwitcher locale={locale} />
                     <Button variant="ghost" className="hidden sm:inline-flex">
                         {dictionary.site.login}
                     </Button>
@@ -81,24 +79,29 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
                             <nav className="mt-6 flex flex-col gap-4">
                                 {mainNavItems.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={
-                                            item.href.startsWith("#")
-                                                ? item.href
-                                                : `/${locale}${item.href}`
-                                        }
-                                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                                    >
-                                        {dictionary.navigation[item.labelKey]}
-                                    </Link>
+                                    <SheetClose key={item.href} asChild>
+                                        <Link
+                                            href={
+                                                item.href.startsWith("#")
+                                                    ? item.href
+                                                    : `/${locale}${item.href}`
+                                            }
+                                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                                        >
+                                            {dictionary.navigation[item.labelKey]}
+                                        </Link>
+                                    </SheetClose>
                                 ))}
                             </nav>
 
                             <div className="mt-6 border-t pt-6">
-                                <Button className="w-full">
-                                    {dictionary.site.getStarted}
-                                </Button>
+                                <SheetClose asChild>
+                                    <Button className="w-full" asChild>
+                                        <Link href={`/${locale}`}>
+                                            {dictionary.site.getStarted}
+                                        </Link>
+                                    </Button>
+                                </SheetClose>
                             </div>
                         </SheetContent>
                     </Sheet>

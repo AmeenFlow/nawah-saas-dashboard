@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 
 // *  عرّفنا نوع الخصائص التي يحتاجها المكوّن.
 type HeroSectionProps = Readonly<{
     title: string;
-    badge:string,
+    badge: string,
     description: string;
     primaryAction: string;
     secondaryAction: string;
+    secondaryActionHref: string;
 }>;
 
 /**
@@ -22,25 +23,30 @@ export function HeroSection({
     description,
     primaryAction,
     secondaryAction,
+    secondaryActionHref,
 }: HeroSectionProps) {
     return (
-        <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center px-4 text-center">
-            <div className="mb-5 rounded-full border bg-muted px-4 py-1.5 text-sm font-medium text-muted-foreground">
+        <section className="mx-auto flex max-w-6xl flex-col items-center px-4 pb-14 pt-10 text-center sm:pb-16 sm:pt-12 lg:min-h-[calc(100vh-4rem)] lg:justify-center lg:py-0">
+            <div className="mb-4 rounded-full border bg-muted px-4 py-1.5 text-sm font-medium text-muted-foreground">
                 {badge}
             </div>
             <h1 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.08]">
                 {title}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
                 {description}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button size="lg">{primaryAction}</Button>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button size="lg">
+                    {primaryAction}
+                </Button>
 
-                <Button variant="outline" size="lg">
-                    {secondaryAction}
+                <Button variant="outline" size="lg" asChild>
+                    <Link href={secondaryActionHref}>
+                        {secondaryAction}
+                    </Link>
                 </Button>
             </div>
         </section>

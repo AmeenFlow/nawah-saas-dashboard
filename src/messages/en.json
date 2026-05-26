@@ -2,7 +2,8 @@
     "site": {
         "login": "Log in",
         "getStarted": "Get started",
-        "openMenu": "Open menu"
+        "openMenu": "Open menu",
+        "backHome": "Back to home"
     },
     "navigation": {
         "home": "Home",
@@ -17,6 +18,25 @@
             "description": "Nawah helps teams organize tasks, track performance, and build a clearer workflow in Arabic and English.",
             "primaryAction": "Get started",
             "secondaryAction": "View features"
+        },
+        "features": {
+            "badge": "Features",
+            "title": "Everything you need to manage your team clearly",
+            "description": "Nawah combines simplicity, performance, and a human-centered experience for modern teams.",
+            "items": [
+                {
+                    "title": "Task organization",
+                    "description": "Organize your team’s work, set priorities, and track progress from one place."
+                },
+                {
+                    "title": "Performance tracking",
+                    "description": "Monitor key metrics and make decisions based on clear, reliable data."
+                },
+                {
+                    "title": "Bilingual experience",
+                    "description": "Deliver a smooth Arabic and English experience with full RTL and LTR support."
+                }
+            ]
         }
     }
 }
