@@ -23,7 +23,7 @@ export function HeroSection({
 }: HeroSectionProps) {
     return (
         <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center px-4 text-center">
-            <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
+            <h1 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.08]">
                 {title}
             </h1>
 
