@@ -88,6 +88,12 @@
                 }
             ]
         },
+        "cta": {
+            "title": "Start organizing your team’s work with Nawah",
+            "description": "Give your team a clearer way to manage tasks, track performance, and work in Arabic and English from one place.",
+            "primaryAction": "Get started",
+            "secondaryAction": "View features"
+        },
         "features": {
             "badge": "Features",
             "title": "Everything you need to manage your team clearly",
