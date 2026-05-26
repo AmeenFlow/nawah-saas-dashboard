@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/shared/language-switcher";
+
 import {
     Sheet,
     SheetClose,
@@ -17,6 +17,7 @@ import type { Locale } from "@/types/locale";
 
 type SiteHeaderProps = Readonly<{
     locale: Locale;
+    currentPath: "/" | "/features";
 }>;
 
 /**
@@ -26,9 +27,12 @@ type SiteHeaderProps = Readonly<{
  * export default function SiteHeader
  * و هذا مناسب للمكونات المشتركة 
  */
-export function SiteHeader({ locale }: SiteHeaderProps) {
+export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
+
     const dictionary = getDictionary(locale);
     const nextLocale = locale === "ar" ? "en" : "ar";
+    const nextLocaleHref =
+        currentPath === "/" ? `/${nextLocale}` : `/${nextLocale}${currentPath}`;
     const mobileMenuSide = locale === "ar" ? "right" : "left";
 
     return (
@@ -42,11 +46,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     {mainNavItems.map((item) => (
                         <Link
                             key={item.href}
-                            href={
-                                item.href.startsWith("#")
-                                    ? item.href
-                                    : `/${locale}${item.href}`
-                            }
+                            href={`/${locale}${item.href}`}
+
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
                             {dictionary.navigation[item.labelKey]}
@@ -55,7 +56,13 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 </nav>
 
                 <div className="flex items-center gap-2">
-                    <LanguageSwitcher locale={locale} />
+
+                    <Button variant="ghost" size="sm" asChild>
+                        <Link href={nextLocaleHref}>
+                            {nextLocale.toUpperCase()}
+                        </Link>
+                    </Button>
+
                     <Button variant="ghost" className="hidden sm:inline-flex">
                         {dictionary.site.login}
                     </Button>
@@ -63,7 +70,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     <Button className="hidden sm:inline-flex">
                         {dictionary.site.getStarted}
                     </Button>
-                    
+
                     <Sheet>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="md:hidden">
@@ -81,11 +88,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                                 {mainNavItems.map((item) => (
                                     <SheetClose key={item.href} asChild>
                                         <Link
-                                            href={
-                                                item.href.startsWith("#")
-                                                    ? item.href
-                                                    : `/${locale}${item.href}`
-                                            }
+                                            href={`/${locale}${item.href}`}
+
                                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                                         >
                                             {dictionary.navigation[item.labelKey]}
@@ -96,11 +100,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
                             <div className="mt-6 border-t pt-6">
                                 <SheetClose asChild>
-                                    <Button className="w-full" asChild>
-                                        <Link href={`/${locale}`}>
-                                            {dictionary.site.getStarted}
-                                        </Link>
-                                    </Button>
+                                    <Link
+                                        href={`/${locale}`}
+                                        className="inline-flex h-8 w-full items-center justify-center rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                                    >
+                                        {dictionary.site.getStarted}
+                                    </Link>
                                 </SheetClose>
                             </div>
                         </SheetContent>

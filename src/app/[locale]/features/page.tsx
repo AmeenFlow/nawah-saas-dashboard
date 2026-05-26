@@ -1,10 +1,11 @@
 import { FeaturesSection } from "@/components/sections/features-section";
 import { SiteHeader } from "@/components/shared/site-header";
 import { Button } from "@/components/ui/button";
- import { getDictionary } from "@/lib/dictionaries";
+import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 
 type FeaturesPageProps = Readonly<{
     params: Promise<{
@@ -23,8 +24,8 @@ export default async function FeaturesPage({ params }: FeaturesPageProps) {
 
     return (
         <main className="min-h-screen">
-            <SiteHeader locale={locale} />
-          
+            <SiteHeader locale={locale} currentPath="/features" />
+
             <FeaturesSection
                 badge={dictionary.home.features.badge}
                 title={dictionary.home.features.title}
@@ -33,17 +34,19 @@ export default async function FeaturesPage({ params }: FeaturesPageProps) {
             />
             <div className="mx-auto max-w-6xl px-4 pb-16 text-center">
                 <Button variant="outline" asChild>
-                    <Link href={`/${locale}`}>
-                        {dictionary.site.backHome}
-                    </Link>
-                </Button>
-
-              {/* <Button variant="outline" asChild>
-                    <a href={`/${locale}`}>
+                    <a href={`/${locale}#home`}>
                         {dictionary.site.backHome}
                     </a>
-                </Button>  */}
+                </Button>
+
+                {/* <Button variant="outline" asChild>
+                    <Link href={`/${locale}`} scroll={true}>
+                        {dictionary.site.backHome}
+                    </Link>
+                </Button> */}
+
             </div>
         </main>
     );
 }
+

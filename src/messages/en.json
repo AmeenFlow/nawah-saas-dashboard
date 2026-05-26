@@ -17,7 +17,18 @@
             "badge": "Bilingual platform for modern teams",
             "description": "Nawah helps teams organize tasks, track performance, and build a clearer workflow in Arabic and English.",
             "primaryAction": "Get started",
-            "secondaryAction": "View features"
+            "secondaryAction": "View features",
+            "highlights": [
+                "Full Arabic and English support",
+                "Responsive experience for every screen",
+                "Clear interface for modern teams"
+            ],
+            "preview": {
+                "title": "Overview",
+                "tasks": "Active tasks",
+                "performance": "Performance score",
+                "language": "Bilingual experience"
+            }
         },
         "features": {
             "badge": "Features",

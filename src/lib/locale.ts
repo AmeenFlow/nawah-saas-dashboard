@@ -1,10 +1,8 @@
-import { siteConfig } from "@/config/site";
+import { supportedLocales } from "@/config/locales";
 import type { Locale } from "@/types/locale";
 
-
-//دالة تتحقق هل النص القادم من الرابط هو لغة موجودة داخل ["ar", "en"].
 export function isLocale(value: string): value is Locale {
-    return siteConfig.locales.includes(value as Locale);
+    return supportedLocales.some((locale) => locale === value);
 }
 
 export function getTextDirection(locale: Locale) {

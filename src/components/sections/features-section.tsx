@@ -17,29 +17,33 @@ export function FeaturesSection({
     items,
 }: FeaturesSectionProps) {
     return (
-        <section id="features" className="scroll-mt-16 border-t px-0 pb-16 pt-12 sm:pt-16 lg:py-20">
+        <section className="bg-background py-14 md:py-20">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="mx-auto max-w-2xl text-center">
-                    <div className="mb-4 inline-flex rounded-full border bg-muted px-4 py-1.5 text-sm font-medium text-muted-foreground">
+                    <div className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
                         {badge}
                     </div>
 
-                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                    <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-4xl">
                         {title}
                     </h2>
 
-                    <p className="mt-4 text-muted-foreground">
+                    <p className="mt-4 text-base leading-7 text-muted-foreground">
                         {description}
                     </p>
                 </div>
 
-                <div className="mt-12 grid gap-4 md:grid-cols-3">
-                    {items.map((item) => (
+                <div className="mt-10 grid gap-4 md:grid-cols-3">
+                    {items.map((item, index) => (
                         <article
                             key={item.title}
-                            className="rounded-2xl border bg-background p-6 shadow-sm"
+                            className="group rounded-3xl border bg-background p-6 shadow-sm transition-colors hover:bg-muted/40"
                         >
-                            <h3 className="text-lg font-semibold">
+                            <div className="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-sm font-bold text-primary">
+                                {index + 1}
+                            </div>
+
+                            <h3 className="mt-5 text-lg font-semibold">
                                 {item.title}
                             </h3>
 
