@@ -24,6 +24,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <SiteHeader locale={locale} />
       <HeroSection
         title={dictionary.home.hero.title}
+        badge={dictionary.home.hero.badge}
         description={dictionary.home.hero.description}
         primaryAction={dictionary.home.hero.primaryAction}
         secondaryAction={dictionary.home.hero.secondaryAction}

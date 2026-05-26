@@ -13,6 +13,7 @@
     "home": {
         "hero": {
             "title": "A professional SaaS platform for managing your work",
+            "badge": "Bilingual platform for modern teams",
             "description": "Nawah helps teams organize tasks, track performance, and build a clearer workflow in Arabic and English.",
             "primaryAction": "Get started",
             "secondaryAction": "View features"
