@@ -17,7 +17,7 @@ export function FeaturesSection({
     items,
 }: FeaturesSectionProps) {
     return (
-        <section className="bg-background py-14 md:py-20">
+        <section className="bg-background py-14 md:py-16">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="mx-auto max-w-2xl text-center">
                     <div className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">

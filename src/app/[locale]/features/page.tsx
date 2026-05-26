@@ -33,17 +33,17 @@ export default async function FeaturesPage({ params }: FeaturesPageProps) {
                 items={dictionary.home.features.items}
             />
             <div className="mx-auto max-w-6xl px-4 pb-16 text-center">
-                <Button variant="outline" asChild>
+                {/* <Button variant="outline" asChild>
                     <a href={`/${locale}#home`}>
                         {dictionary.site.backHome}
                     </a>
-                </Button>
+                </Button> */}
 
-                {/* <Button variant="outline" asChild>
+                <Button variant="outline" asChild>
                     <Link href={`/${locale}`} scroll={true}>
                         {dictionary.site.backHome}
                     </Link>
-                </Button> */}
+                </Button>
 
             </div>
         </main>

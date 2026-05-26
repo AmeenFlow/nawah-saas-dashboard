@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
     Sheet,
     SheetClose,
@@ -57,11 +57,12 @@ export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
 
                 <div className="flex items-center gap-2">
 
-                    <Button variant="ghost" size="sm" asChild>
-                        <Link href={nextLocaleHref}>
-                            {nextLocale.toUpperCase()}
-                        </Link>
-                    </Button>
+                    <Link
+                        href={nextLocaleHref}
+                        className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+                    >
+                        {nextLocale.toUpperCase()}
+                    </Link>
 
                     <Button variant="ghost" className="hidden sm:inline-flex">
                         {dictionary.site.login}
@@ -72,11 +73,11 @@ export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
                     </Button>
 
                     <Sheet>
-                        <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="md:hidden">
-                                <Menu />
-                                <span className="sr-only">{dictionary.site.openMenu}</span>
-                            </Button>
+                        <SheetTrigger
+                            className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "md:hidden")}
+                        >
+                            <Menu />
+                            <span className="sr-only">{dictionary.site.openMenu}</span>
                         </SheetTrigger>
 
                         <SheetContent side={mobileMenuSide}>
@@ -86,13 +87,12 @@ export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
 
                             <nav className="mt-6 flex flex-col gap-4">
                                 {mainNavItems.map((item) => (
-                                    <SheetClose key={item.href} asChild>
+                                    <SheetClose asChild>
                                         <Link
-                                            href={`/${locale}${item.href}`}
-
-                                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                                            href={`/${locale}`}
+                                            className={cn(buttonVariants({ variant: "default" }), "w-full")}
                                         >
-                                            {dictionary.navigation[item.labelKey]}
+                                            {dictionary.site.getStarted}
                                         </Link>
                                     </SheetClose>
                                 ))}
