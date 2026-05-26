@@ -17,6 +17,13 @@ type SiteHeaderProps = Readonly<{
     locale: Locale;
 }>;
 
+/**
+ * لاحظ اننا استخدمنا
+ * named export ==> export function SiteHeader
+ * و لم نستخدم
+ * export default function SiteHeader
+ * و هذا مناسب للمكونات المشتركة 
+ */
 export function SiteHeader({ locale }: SiteHeaderProps) {
     const dictionary = getDictionary(locale);
     const nextLocale = locale === "ar" ? "en" : "ar";
