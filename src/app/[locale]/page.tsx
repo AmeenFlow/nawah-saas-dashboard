@@ -1,9 +1,10 @@
+import { SiteHeader } from "@/components/shared/site-header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { StatsSection } from "@/components/sections/stats-section";
 import { WorkflowSection } from "@/components/sections/workflow-section";
 import { UseCasesSection } from "@/components/sections/use-cases-section";
 import { CtaSection } from "@/components/sections/cta-section";
-import { SiteHeader } from "@/components/shared/site-header";
+import { SiteFooter } from "@/components/shared/site-footer";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
@@ -60,6 +61,8 @@ export default async function HomePage({ params }: HomePageProps) {
         secondaryAction={dictionary.home.cta.secondaryAction}
         secondaryActionHref={`/${locale}/features`}
       />
+
+      <SiteFooter locale={locale} />
     </main>
   );
 }

@@ -3,7 +3,8 @@
         "login": "Log in",
         "getStarted": "Get started",
         "openMenu": "Open menu",
-        "backHome": "Back to home"
+        "backHome": "Back to home",
+        "footerDescription": "A modern bilingual SaaS dashboard that helps teams organize work and track performance clearly."
     },
     "navigation": {
         "home": "Home",
