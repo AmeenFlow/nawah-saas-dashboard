@@ -69,6 +69,25 @@
                 }
             ]
         },
+        "useCases": {
+            "badge": "Who is Nawah for?",
+            "title": "Built for teams that need clarity in daily work",
+            "description": "Whether you manage a small team or multiple operations, Nawah helps you organize work and keep the bigger picture visible.",
+            "items": [
+                {
+                    "title": "Management teams",
+                    "description": "Track priorities, ownership, and key indicators from one place."
+                },
+                {
+                    "title": "Operations teams",
+                    "description": "Turn daily processes into clear, trackable tasks."
+                },
+                {
+                    "title": "Small and mid-sized businesses",
+                    "description": "Start with a simple experience that does not require complex setup or too many tools."
+                }
+            ]
+        },
         "features": {
             "badge": "Features",
             "title": "Everything you need to manage your team clearly",

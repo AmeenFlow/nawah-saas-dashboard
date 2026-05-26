@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { StatsSection } from "@/components/sections/stats-section";
 import { WorkflowSection } from "@/components/sections/workflow-section";
+import { UseCasesSection } from "@/components/sections/use-cases-section";
 import { SiteHeader } from "@/components/shared/site-header";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
@@ -42,6 +43,13 @@ export default async function HomePage({ params }: HomePageProps) {
         title={dictionary.home.workflow.title}
         description={dictionary.home.workflow.description}
         steps={dictionary.home.workflow.steps}
+      />
+
+      <UseCasesSection
+        badge={dictionary.home.useCases.badge}
+        title={dictionary.home.useCases.title}
+        description={dictionary.home.useCases.description}
+        items={dictionary.home.useCases.items}
       />
     </main>
   );
