@@ -67,8 +67,8 @@ export function HeroSection({
                 </div>
 
                 <div className="rounded-3xl border bg-muted/40 p-3 shadow-sm">
-                    <div className="rounded-2xl border bg-background p-5 shadow-sm">
-                        <div className="flex items-center justify-between border-b pb-4">
+                    <div className="rounded-2xl border bg-background p-5 text-center shadow-sm sm:text-start">
+                        <div className="flex flex-col items-center gap-3 border-b pb-4 sm:flex-row sm:justify-between">
                             <div>
                                 <p className="text-sm font-medium text-muted-foreground">
                                     {preview.title}
@@ -83,7 +83,7 @@ export function HeroSection({
 
                         <div className="mt-5 grid gap-3">
                             <div className="rounded-2xl border p-4">
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
                                     <p className="text-sm text-muted-foreground">
                                         {preview.tasks}
                                     </p>
