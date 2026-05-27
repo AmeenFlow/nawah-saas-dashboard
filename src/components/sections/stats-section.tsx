@@ -23,6 +23,7 @@ export function StatsSection({ items }: StatsSectionProps) {
                         <p className="mt-2 text-sm leading-6 text-muted-foreground">
                             {item.label}
                         </p>
+                     
                     </article>
                 ))}
             </div>

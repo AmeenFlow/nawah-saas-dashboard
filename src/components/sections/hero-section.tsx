@@ -33,7 +33,8 @@ export function HeroSection({
     return (
         <section id="home" className="border-b bg-background">
             <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:py-14 min-[900px]:grid-cols-[1.05fr_0.95fr] min-[900px]:items-center lg:py-16">
-                <div className="text-center min-[900px]:text-start">
+                {/* min-[900px]:text-start */}
+                <div className="text-center ">
                     <div className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
                         {badge}
                     </div>
@@ -67,7 +68,8 @@ export function HeroSection({
                 </div>
 
                 <div className="rounded-3xl border bg-muted/40 p-3 shadow-sm">
-                    <div className="rounded-2xl border bg-background p-5 text-center shadow-sm lg:text-start">
+                    {/* lg:text-start */}
+                    <div className="rounded-2xl border bg-background p-5 text-center shadow-sm ">
                         <div className="flex flex-col items-center gap-3 border-b pb-4 sm:flex-row sm:justify-between">
                             <div>
                                 <p className="text-sm font-medium text-muted-foreground">
