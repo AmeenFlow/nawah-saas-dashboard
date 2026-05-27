@@ -31,8 +31,8 @@ export function HeroSection({
     preview,
 }: HeroSectionProps) {
     return (
-        <section id="home" className="border-b bg-background py-0">
-            <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
+        <section id="home" className="border-b bg-background">
+            <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-16">
                 <div className="text-center lg:text-start">
                     <div className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
                         {badge}
