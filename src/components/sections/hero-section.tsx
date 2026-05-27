@@ -32,8 +32,8 @@ export function HeroSection({
 }: HeroSectionProps) {
     return (
         <section id="home" className="border-b bg-background">
-            <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-16">
-                <div className="text-center lg:text-start">
+            <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:py-14 min-[900px]:grid-cols-[1.05fr_0.95fr] min-[900px]:items-center lg:py-16">
+                <div className="text-center min-[900px]:text-start">
                     <div className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
                         {badge}
                     </div>
@@ -42,11 +42,11 @@ export function HeroSection({
                         {title}
                     </h1>
 
-                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted-foreground lg:mx-0">
+                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted-foreground min-[900px]:mx-0">
                         {description}
                     </p>
 
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center min-[900px]:justify-start">
                         <Button size="lg">{primaryAction}</Button>
 
                         <Button variant="outline" size="lg" asChild>
@@ -54,7 +54,7 @@ export function HeroSection({
                         </Button>
                     </div>
 
-                    <ul className="mt-7 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3 lg:max-w-2xl">
+                    <ul className="mt-7 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3 min-[900px]:max-w-2xl">
                         {highlights.map((item) => (
                             <li
                                 key={item}
@@ -67,7 +67,7 @@ export function HeroSection({
                 </div>
 
                 <div className="rounded-3xl border bg-muted/40 p-3 shadow-sm">
-                    <div className="rounded-2xl border bg-background p-5 text-center shadow-sm sm:text-start">
+                    <div className="rounded-2xl border bg-background p-5 text-center shadow-sm lg:text-start">
                         <div className="flex flex-col items-center gap-3 border-b pb-4 sm:flex-row sm:justify-between">
                             <div>
                                 <p className="text-sm font-medium text-muted-foreground">
