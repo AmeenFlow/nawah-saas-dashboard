@@ -34,11 +34,15 @@ export function UseCasesSection({
                 </div>
 
                 <div className="mt-10 grid gap-4 md:grid-cols-3">
-                    {items.map((item) => (
+                    {items.map((item, index) => (
                         <article
                             key={item.title}
-                            className="rounded-3xl border bg-background p-6 shadow-sm"
+                            className="rounded-2xl border bg-background p-5 shadow-sm transition-colors hover:bg-muted/30"
                         >
+                            <div className="mb-4 flex size-9 items-center justify-center rounded-xl bg-muted text-sm font-semibold text-muted-foreground">
+                                {index + 1}
+                            </div>
+
                             <h3 className="text-lg font-semibold">
                                 {item.title}
                             </h3>
