@@ -4,9 +4,7 @@ import { siteConfig } from "@/config/site";
 import { cairo, geist } from "@/lib/fonts";
 import { getTextDirection, isLocale } from "@/lib/locale";
 import "../globals.css";
-import { SiteFooter } from "@/components/shared/site-footer";
-import { SiteHeaderPath } from "@/components/shared/site-header-path";
-import { getDictionary } from "@/lib/dictionaries";
+
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
@@ -37,7 +35,6 @@ export default async function LocaleLayout({
   }
 
   const direction = getTextDirection(locale);
-  const dictionary = getDictionary(locale);
 
   return (
     <html lang={locale} dir={direction}>
@@ -45,11 +42,9 @@ export default async function LocaleLayout({
       
       <body className={`${cairo.variable} ${geist.variable}`}>
 
-        <SiteHeaderPath locale={locale} dictionary={dictionary} />  
         
               {children}
 
-        <SiteFooter locale={locale} />
 
       </body>
     </html>
