@@ -16,8 +16,8 @@ export function SiteFooter({ locale }: SiteFooterProps) {
 
     return (
         <footer className="border-t bg-background">
-            <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-                <div className="rounded-3xl border bg-muted/30 p-6 md:p-8">
+            <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10 md:py-12">
+                <div className="rounded-3xl border bg-muted/20 p-5 sm:p-6 md:p-7">
                     <div className="grid gap-10 text-center lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:text-start">
                         <div>
                             <Link
@@ -70,7 +70,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                                 {locale === "ar" ? "اللغة والتجربة" : "Language & Experience"}
                             </h3>
 
-                            <div className="mt-4 rounded-2xl border bg-background p-4">
+                            <div className="mt-4 rounded-2xl border bg-background/80 p-4">
                                 <p className="text-sm font-medium">
                                     {locale === "ar"
                                         ? "مصممة للعربية والإنجليزية"
