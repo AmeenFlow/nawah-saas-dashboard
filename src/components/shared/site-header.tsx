@@ -85,20 +85,20 @@ export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
                                 <SheetTitle>{siteConfig.name}</SheetTitle>
                             </SheetHeader>
 
-                            <nav className="mt-6 flex flex-col gap-4">
+                            <nav className="mt-6 flex flex-col gap-4 px-4">
                                 {mainNavItems.map((item) => (
-                                    <SheetClose asChild>
+                                    <SheetClose key={item.href} asChild>
                                         <Link
-                                            href={`/${locale}`}
-                                            className={cn(buttonVariants({ variant: "default" }), "w-full")}
+                                            href={`/${locale}${item.href}`}
+                                            className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                                         >
-                                            {dictionary.site.getStarted}
+                                            {dictionary.navigation[item.labelKey]}
                                         </Link>
                                     </SheetClose>
                                 ))}
                             </nav>
 
-                            <div className="mt-6 border-t pt-6">
+                            <div className="mt-6 border-t px-4 pt-6">
                                 <SheetClose asChild>
                                     <Link
                                         href={`/${locale}`}
