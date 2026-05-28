@@ -4,7 +4,6 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { WorkflowSection } from "@/components/sections/workflow-section";
 import { UseCasesSection } from "@/components/sections/use-cases-section";
 import { CtaSection } from "@/components/sections/cta-section";
-import { SiteFooter } from "@/components/shared/site-footer";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
@@ -62,7 +61,7 @@ export default async function HomePage({ params }: HomePageProps) {
         secondaryActionHref={`/${locale}/features`}
       />
 
-      <SiteFooter locale={locale} />
+      
     </main>
   );
 }

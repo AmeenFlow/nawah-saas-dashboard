@@ -5,6 +5,7 @@ import { cairo, geist } from "@/lib/fonts";
 import { getTextDirection, isLocale } from "@/lib/locale";
 import type { Locale } from "@/types/locale";
 import "../globals.css";
+import { SiteFooter } from "@/components/shared/site-footer";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -42,6 +43,8 @@ export default async function LocaleLayout({
     <html lang={locale} dir={direction}>
       <body className={`${cairo.variable} ${geist.variable}`}>
         {children}
+
+        <SiteFooter locale={locale} />
       </body>
     </html>
   );
