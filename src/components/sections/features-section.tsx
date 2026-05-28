@@ -1,3 +1,5 @@
+import { SectionCard } from "../shared/section-card";
+
 type FeatureItem = Readonly<{
     title: string;
     description: string;
@@ -35,22 +37,30 @@ export function FeaturesSection({
 
                 <div className="mt-10 grid gap-4 md:grid-cols-3">
                     {items.map((item, index) => (
-                        <article
+                        // <article
+                        //     key={item.title}
+                        //     className="rounded-2xl border bg-background p-5 shadow-sm"
+                        // >
+                        //     <div className="flex items-center justify-center gap-3 text-center sm:justify-start sm:text-start rtl:sm:text-end">
+                        //         <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-primary-foreground">
+                        //             {index + 1}
+                        //         </div>
+
+                        //         <h3 className="text-lg font-semibold">
+                        //             {item.title}
+                        //         </h3>
+                        //     </div>
+
+                        //     <p className="mt-4 text-center text-sm leading-6 text-muted-foreground sm:text-start sm:text-end">
+                        //         {item.description}
+                        //     </p>
+                        // </article>
+                        <SectionCard
                             key={item.title}
-                            className="group rounded-3xl border bg-background p-6 shadow-sm transition-colors hover:bg-muted/40"
-                        >
-                            <div className="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-sm font-bold text-primary">
-                                {index + 1}
-                            </div>
-
-                            <h3 className="mt-5 text-lg font-semibold">
-                                {item.title}
-                            </h3>
-
-                            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                                {item.description}
-                            </p>
-                        </article>
+                            index={index + 1}
+                            title={item.title}
+                            description={item.description}
+                        />
                     ))}
                 </div>
             </div>

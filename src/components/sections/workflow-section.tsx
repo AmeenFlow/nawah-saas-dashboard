@@ -1,3 +1,5 @@
+import { SectionCard } from "../shared/section-card";
+
 type WorkflowStep = Readonly<{
     title: string;
     description: string;
@@ -35,43 +37,32 @@ export function WorkflowSection({
                     </div>
 
                     <div className="mt-10 grid gap-4 md:grid-cols-3">
-                        {steps.map((step, index) => (
+                        {steps.map((item, index) => (
+                          
                             // <article
                             //     key={step.title}
-                            //     className="rounded-3xl border bg-background p-5 shadow-sm"
+                            //     className="rounded-2xl border bg-background p-5 shadow-sm"
                             // >
-                            //     <div className="flex min-h-24 flex-col items-center justify-center gap-4 sm:flex-row sm:text-start rtl:sm:text-end">
+                            //     <div className="flex items-center justify-center gap-3 text-center sm:justify-start sm:text-start rtl:sm:text-end">
                             //         <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-primary-foreground">
                             //             {index + 1}
                             //         </div>
 
-                            //         <div className="flex flex-col justify-center">
-                            //             <h3 className="text-lg font-semibold text-center">
-                            //                 {step.title}
-                            //             </h3>
-
-                            //             <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                            //                 {step.description}
-                            //             </p>
-                            //         </div>
+                            //         <h3 className="text-lg font-semibold">
+                            //             {step.title}
+                            //         </h3>
                             //     </div>
+
+                            //     <p className="mt-4 text-center text-sm leading-6 text-muted-foreground sm:text-start sm:text-end">
+                            //         {step.description}
+                            //     </p>
                             // </article>
-                            <article
-                                key={step.title}
-                                className="rounded-2xl border bg-background p-5 text-center shadow-sm"
-                            >
-                                <div className="mx-auto flex size-10 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-primary-foreground">
-                                    {index + 1}
-                                </div>
-
-                                <h3 className="mt-5 text-lg font-semibold">
-                                    {step.title}
-                                </h3>
-
-                                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                                    {step.description}
-                                </p>
-                            </article>
+                            <SectionCard
+                                key={item.title}
+                                index={index + 1}
+                                title={item.title}
+                                description={item.description}
+                            />
                         ))}
                     </div>
                 </div>
