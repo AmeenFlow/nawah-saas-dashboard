@@ -34,18 +34,24 @@ export default async function LocaleLayout({
 
 
   if (!isLocale(locale)) {
-    notFound();// إذا دخل شخص على رابط غير صحيح
+    notFound();
   }
 
-  const direction = getTextDirection(locale as Locale);// نحدد اتجاه الصفحة حسب اللغة.
+  const direction = getTextDirection(locale);
   const dictionary = getDictionary(locale);
 
   return (
     <html lang={locale} dir={direction}>
+
+      
       <body className={`${cairo.variable} ${geist.variable}`}>
-        <SiteHeaderPath locale={locale} dictionary={dictionary} />        {children}
+
+        <SiteHeaderPath locale={locale} dictionary={dictionary} />  
+        
+              {children}
 
         <SiteFooter locale={locale} />
+
       </body>
     </html>
   );

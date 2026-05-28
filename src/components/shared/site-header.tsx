@@ -35,7 +35,6 @@ export function SiteHeader({
     dictionary,
 }: SiteHeaderProps) {
 
-    // const dictionary = getDictionary(locale);
     const nextLocale = locale === "ar" ? "en" : "ar";
     const nextLocaleHref =
         currentPath === "/" ? `/${nextLocale}` : `/${nextLocale}${currentPath}`;
