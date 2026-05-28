@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { cairo, geist } from "@/lib/fonts";
 import { getTextDirection, isLocale } from "@/lib/locale";
-import type { Locale } from "@/types/locale";
 import "../globals.css";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { SiteHeaderPath } from "@/components/shared/site-header-path";
