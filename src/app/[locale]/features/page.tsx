@@ -1,5 +1,4 @@
 import { FeaturesSection } from "@/components/sections/features-section";
-import { SiteHeader } from "@/components/shared/site-header";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
@@ -24,7 +23,7 @@ export default async function FeaturesPage({ params }: FeaturesPageProps) {
 
     return (
         <main className="min-h-screen">
-            <SiteHeader locale={locale} currentPath="/features" />
+
 
             <FeaturesSection
                 badge={dictionary.home.features.badge}

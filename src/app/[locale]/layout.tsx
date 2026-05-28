@@ -6,7 +6,8 @@ import { getTextDirection, isLocale } from "@/lib/locale";
 import type { Locale } from "@/types/locale";
 import "../globals.css";
 import { SiteFooter } from "@/components/shared/site-footer";
-
+import { SiteHeaderPath } from "@/components/shared/site-header-path";
+import { getDictionary } from "@/lib/dictionaries";
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
@@ -14,7 +15,6 @@ export const metadata: Metadata = {
 
 type LocaleLayoutProps = Readonly<{
   children: React.ReactNode;
-  // في الاصدارات الحديثة في نيكست  تكون البارامز على شكل بروميس و اللوكل اعني اللغة قادمة من رابط مثل /a 
   params: Promise<{
     locale: string;
   }>;
@@ -38,11 +38,12 @@ export default async function LocaleLayout({
   }
 
   const direction = getTextDirection(locale as Locale);// نحدد اتجاه الصفحة حسب اللغة.
+  const dictionary = getDictionary(locale);
 
   return (
     <html lang={locale} dir={direction}>
       <body className={`${cairo.variable} ${geist.variable}`}>
-        {children}
+        <SiteHeaderPath locale={locale} dictionary={dictionary} />        {children}
 
         <SiteFooter locale={locale} />
       </body>

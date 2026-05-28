@@ -1,4 +1,3 @@
-import { SiteHeader } from "@/components/shared/site-header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { StatsSection } from "@/components/sections/stats-section";
 import { WorkflowSection } from "@/components/sections/workflow-section";
@@ -26,7 +25,7 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <main className="min-h-screen">
       <div id="top" />
-      <SiteHeader locale={locale} currentPath="/" />
+     
       <HeroSection
         title={dictionary.home.hero.title}
         badge={dictionary.home.hero.badge}

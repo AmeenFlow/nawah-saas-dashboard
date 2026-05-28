@@ -12,14 +12,16 @@ import {
 } from "@/components/ui/sheet";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
-import { getDictionary } from "@/lib/dictionaries";
+
+import type { getDictionary } from "@/lib/dictionaries"; 
+type Dictionary = ReturnType<typeof getDictionary>;
 import type { Locale } from "@/types/locale";
 
 type SiteHeaderProps = Readonly<{
     locale: Locale;
     currentPath: "/" | "/features";
+    dictionary: Dictionary;
 }>;
-
 /**
  * لاحظ اننا استخدمنا
  * named export ==> export function SiteHeader
@@ -27,9 +29,13 @@ type SiteHeaderProps = Readonly<{
  * export default function SiteHeader
  * و هذا مناسب للمكونات المشتركة 
  */
-export function SiteHeader({ locale, currentPath }: SiteHeaderProps) {
+export function SiteHeader({
+    locale,
+    currentPath,
+    dictionary,
+}: SiteHeaderProps) {
 
-    const dictionary = getDictionary(locale);
+    // const dictionary = getDictionary(locale);
     const nextLocale = locale === "ar" ? "en" : "ar";
     const nextLocaleHref =
         currentPath === "/" ? `/${nextLocale}` : `/${nextLocale}${currentPath}`;
