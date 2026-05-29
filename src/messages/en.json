@@ -114,5 +114,34 @@
                 }
             ]
         }
+     
+    },
+    "dashboard": {
+        "overview": {
+            "title": "Overview",
+            "description": "Track your team’s key indicators from one place.",
+            "metrics": [
+                {
+                    "label": "Active tasks",
+                    "value": "24",
+                    "description": "Tasks being tracked this week"
+                },
+                {
+                    "label": "Team members",
+                    "value": "8",
+                    "description": "Members working in the workspace"
+                },
+                {
+                    "label": "Completion rate",
+                    "value": "76%",
+                    "description": "Average progress across work"
+                },
+                {
+                    "label": "Metrics",
+                    "value": "12",
+                    "description": "Performance indicators tracked"
+                }
+            ]
+        }
     }
 }
