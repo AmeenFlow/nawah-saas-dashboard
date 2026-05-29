@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale } from "@/lib/locale";
+import { MetricCard } from "@/components/dashboard/metric-card";
 
 type DashboardPageProps = Readonly<{
     params: Promise<{
@@ -33,22 +34,12 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {overview.metrics.map((metric) => (
-                    <article
+                    <MetricCard
                         key={metric.label}
-                        className="rounded-2xl border bg-background p-5 shadow-sm"
-                    >
-                        <p className="text-sm font-medium text-muted-foreground">
-                            {metric.label}
-                        </p>
-
-                        <p className="mt-3 text-3xl font-bold tracking-tight">
-                            {metric.value}
-                        </p>
-
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                            {metric.description}
-                        </p>
-                    </article>
+                        label={metric.label}
+                        value={metric.value}
+                        description={metric.description}
+                    />
                 ))}
             </div>
         </div>
